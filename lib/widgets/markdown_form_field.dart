@@ -129,9 +129,7 @@ class _MarkdownFormFieldState extends State<MarkdownFormField> {
 
   @override
   void initState() {
-    _internalController = widget.controller != null
-        ? widget.controller!
-        : TextEditingController();
+    _internalController = widget.controller != null ? widget.controller! : TextEditingController();
     _internalFocus = widget.focusNode != null ? widget.focusNode! : FocusNode();
     _internalFocus.addListener(() => _requestFocused());
     super.initState();
@@ -159,9 +157,7 @@ class _MarkdownFormFieldState extends State<MarkdownFormField> {
             },
             child: MarkdownParse(
               key: const ValueKey<String>("zmarkdownparse"),
-              data: _internalController.text == ""
-                  ? "Type here. . ."
-                  : _internalController.text,
+              data: _internalController.text == "" ? "Description..." : _internalController.text,
             ),
           );
   }
